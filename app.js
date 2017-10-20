@@ -18,7 +18,7 @@ function sum(a,b){ //eslint-disable-line
 }
 
 // DONE: Here is the test for sum(); uncomment it to run it
- //testSum(4, 7);
+//testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -53,7 +53,7 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
-// TODO: Write your code here
+// DONE Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
   var theSum = sum(sum(a,b)[0],c);
   var product = multiply(multiply(a,b)[0],c);
@@ -61,8 +61,8 @@ function sumAndMultiply(a,b,c){ //eslint-disable-line
   return message;
 };
 
-// TODO: Here is the test for sumAndMultiply(); uncomment it to run it
- testSumAndMultiply(4,7,5);
+// DONE: Here is the test for sumAndMultiply(); uncomment it to run it
+// testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -76,15 +76,20 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
-// TODO: Write your code here
+// DONE: Write your code here
 var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
-
+  var arrSum = 0;
+  for(var i = 0; i < testArray.length; i++){
+    arrSum = sum(testArray[i], arrSum)[0];
+  }
+  var message = [arrSum, testArray.join(',') + ' was passed in as an array of numbers, and ' + arrSum + ' is their sum.'];
+  return message;
 }
 
-// TODO: Here is the test for sumArray(); uncomment it to run it
-// testSumArray(testArray);
+// DONE: Here is the test for sumArray(); uncomment it to run it
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
