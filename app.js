@@ -1,5 +1,24 @@
 'use strict';
 
+////////////////////
+//Begin Stretch Goal
+
+//build an array of arrays of ids and values
+var idArr = [ ['sum', sum(4,7)[1]], ['multiply', multiply(5,9)[1]], ['sumAndMultiply-sum', sumAndMultiply(4,7,5)[2]], ['sumAndMultiply-multiply', sumAndMultiply(4,7,5)[3]], ['sumArray', sumArray([2,3,4])[1]], ['multiplyArray', multiplyArray([2,3,4])[1]] ];
+
+//loop through each item in the array, passing the id and value to a function
+for (var i = 0; i < idArr.length; i++) {
+  loadText(idArr[i][0], idArr[i][1]);
+}
+
+//function to writeText data to an id
+function loadText(the_id, text){
+  document.getElementById(the_id).textContent = text;
+}
+//End Stretch Goal
+////////////////////
+
+
 /////////////////////////////////////
 /* Problem 1 (this is your demo that we'll solve in class)
 Write a function called sum() that takes in two numbers as arguments and then returns an array where the first element is the sum of those numbers, and the second element is a concatenated string that EXACTLY follows this example and concatenates a message using the arguments passed into the function:
@@ -58,6 +77,7 @@ function sumAndMultiply(a,b,c){ //eslint-disable-line
   var theSum = sum(sum(a,b)[0],c);
   var product = multiply(multiply(a,b)[0],c);
   var message = [theSum[0], product[0], a + ' and ' + b + ' and ' + c + ' sum to ' + theSum[0] + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + product[0] + '.'];
+
   return message;
 };
 
@@ -114,6 +134,6 @@ function multiplyArray(testArray){ //eslint-disable-line
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-testMultiplyArray(2,3,4);
+//testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
